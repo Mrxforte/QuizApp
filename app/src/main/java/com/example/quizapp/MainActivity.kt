@@ -8,7 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.quizapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+    private var listOfQuetions = arrayListOf<QuestionsModel>()
+    private var currentIndex = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,6 +23,76 @@ class MainActivity : AppCompatActivity() {
         }
 //        ininting the app code block
         loadUI()
+//        load data
+        loadData()
+        binding.next.setOnClickListener() {
+            currentIndex++
+            setTestData(currentIndex)
+        }
+        setTestData(currentIndex)
+    }
+
+    private fun setTestData(currentIndex: Int) {
+        binding.questionTitle.text = listOfQuetions[currentIndex].question
+        binding.answer1.text = listOfQuetions[currentIndex].answer1
+        binding.answer2.text = listOfQuetions[currentIndex].answer2
+        binding.answer3.text = listOfQuetions[currentIndex].answer3
+        binding.answer4.text = listOfQuetions[currentIndex].answer4
+    }
+
+
+    private fun loadData() {
+        listOfQuetions = arrayListOf()
+        listOfQuetions.add(
+            QuestionsModel(
+                "Amir Temur Qachon Tugilgan",
+                "1445",
+                "1345",
+                "1345",
+                "2445",
+                "1445",
+            )
+        )
+        listOfQuetions.add(
+            QuestionsModel(
+                "Alisger Navoi Qachon Tugilgan",
+                "1445",
+                "1345",
+                "1345",
+                "2445",
+                "1445",
+            )
+        )
+        listOfQuetions.add(
+            QuestionsModel(
+                "Hamza Qachon Tugilgan",
+                "1445",
+                "1345",
+                "1345",
+                "2445",
+                "1445",
+            )
+        )
+        listOfQuetions.add(
+            QuestionsModel(
+                "Chingizxon Qachon Tugilgan",
+                "1445",
+                "1345",
+                "1345",
+                "2445",
+                "1445",
+            )
+        )
+        listOfQuetions.add(
+            QuestionsModel(
+                "Ali Qushchi Qachon Tugilgan",
+                "1445",
+                "1345",
+                "1345",
+                "2445",
+                "1445",
+            )
+        )
     }
 
     private fun loadUI() {

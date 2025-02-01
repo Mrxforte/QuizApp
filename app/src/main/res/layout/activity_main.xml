@@ -29,27 +29,32 @@
         app:layout_constraintTop_toBottomOf="@id/questionTitle">
 
         <RadioButton
+            android:id="@+id/answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_1442_yil" />
 
         <RadioButton
+            android:id="@+id/answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_1443_yil" />
 
         <RadioButton
+            android:id="@+id/answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_1444_yil" />
 
         <RadioButton
+            android:id="@+id/answer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/_1445_yil" />
     </RadioGroup>
 
     <Button
+        android:id="@+id/next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
