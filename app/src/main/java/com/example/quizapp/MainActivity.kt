@@ -1,6 +1,9 @@
 package com.example.quizapp
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -114,5 +117,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.home -> Toast.makeText(this, "Home is selected", Toast.LENGTH_SHORT).show()
+            R.id.about -> Toast.makeText(this, "About is selected", Toast.LENGTH_SHORT).show()
+            R.id.info -> Toast.makeText(this, "Info is selected", Toast.LENGTH_SHORT).show()
+            R.id.blog -> Toast.makeText(this, "Blog is selected", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
 }
